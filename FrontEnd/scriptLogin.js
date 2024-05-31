@@ -27,6 +27,7 @@ submit.addEventListener("click", (event) => {
 
       //sessionStorage.setItem('adminMode', 'true'); permet de garder de la data tant que l'onglet ou la fenêtre n'est pas fermé
       sessionStorage.setItem("token", loginJson.token);
+      sessionStorage.setItem("userId", loginJson.userId);
 
       //window.location.href correspond à l'URL de la page actuelle,
       //window.location.href = "index.html" permet d'être redigiré vers la page disgnée
