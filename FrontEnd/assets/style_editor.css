@@ -1,0 +1,240 @@
+/* Pour JS */
+
+/* Modale */
+#modale_overlay {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.5);
+  font-size: 50px;
+  left: 0;
+}
+
+/* Fenêtre principale de la modale */
+
+#modale_main {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 800px;
+  background-color: white;
+  font-size: 50px;
+  border-radius: 10px;
+}
+
+#modale_main-header i {
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  font-size: 30px;
+  margin-right: -290px;
+  margin-top: -100px;
+}
+
+#modale_main-header h3 {
+  padding: 20px;
+  font-size: 20px;
+}
+
+#photos_projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  height: 60%;
+  width: 60%;
+  gap: 2%;
+
+  margin-top: -30px;
+}
+
+.card_image {
+  display: flex;
+  flex-direction: row;
+  width: 18%;
+  height: 30%;
+  margin: 0;
+}
+
+.card_image img {
+  object-fit: cover;
+  width: 100%;
+  padding: 0;
+}
+
+.card_image i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  margin: 5px -30px 0px -25px;
+  color: white;
+  background-color: black;
+  border-radius: 3px;
+  height: 20px;
+  width: 20px;
+}
+
+.modale-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 420px;
+  border-top: solid rgba(128, 128, 128, 0.5) 2px;
+  padding-top: 20px;
+}
+
+.modale-footer button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Syne";
+  font-size: 17px;
+  height: 50px;
+  width: 100%;
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  width: 250px;
+  text-align: center;
+  border-radius: 60px;
+}
+
+/* Fenetre de la modale n°2 */
+#modale_add {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 800px;
+  background-color: white;
+  font-size: 50px;
+  border-radius: 10px;
+}
+
+#modale_add-header i {
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  font-size: 30px;
+  margin-right: -100px;
+  margin-top: -100px;
+}
+
+#modale_add-header h3 {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
+#modale_add form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#modale_add input {
+  height: 50px;
+  width: 400px;
+  font-size: 20px;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+#modale_add label {
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#modale_add #image-upload {
+  display: none;
+}
+
+#add_photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 170px;
+  width: 420px;
+  background-color: #e8f1f6;
+}
+
+#add_photo i {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #cbd6dc;
+  font-size: 76px;
+  margin: auto;
+}
+
+#add_photo button {
+  border: none;
+  color: #306685;
+  font-size: 14px;
+  background-color: #cbd6dc;
+  padding: 10px 40px;
+  border-radius: 20px;
+}
+
+#add_photo p {
+  font-size: 10px;
+  padding-top: 20px;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.banner {
+  display: flex;
+  left: 0;
+  position: fixed;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+#mes_projets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mes_projets a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+#mes_projets i,
+#mes_projets p {
+  padding-bottom: 25px;
+  padding-right: 10px;
+}
+
+#mes_projets i {
+  padding-left: 30px;
+}
