@@ -26,54 +26,9 @@
           <h3>Galerie photo</h3>
         </section>
         <section id="photos_projects">
-          <section class="card_image">
-            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
-            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
-          </section>
-          <section class="card_image">
-            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
-            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
-          </section>
-          <section class="card_image">
-            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
-            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
-          </section>
-          <section class="card_image">
-            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
-            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
-          </section>
-
-          <section class="card_image">
-            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
-            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
-          </section>
-          <section class="card_image">
-            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
-            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
-          </section>
-          <section class="card_image">
-            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
-            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
-          </section>
-          <section class="card_image">
-            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
-            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
-          </section>
-
-          <section class="card_image">
-            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
-            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
-          </section>
-          <section class="card_image">
-            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
-            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
-          </section>
-          <section class="card_image">
-            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
-            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
           </section>
         </section>
-        <section class="modale-footer">
+        <section class="modale_footer">
           <button>Ajouter une photo</button>
         </section>
       </div>
@@ -83,18 +38,18 @@
           <h3>Ajout photo</h3>
           <form action="#" method="post">
             <label id="add_photo">
-              <input type="file" id="image-upload" name="image-upload" accept="image/*" required />
+              <input type="file" id="image_upload" name="image-upload" accept="image/*" required />
               <i class="fa-regular fa-image"></i>
               <button>+ Ajout photo</button>
               <p>jpg, png : 4mo max</p>
             </label>
-            <label for="titre">Titre</label>
-            <input type="text" name="titre" id="titre" required />
-            <label for="categorie">Catégorie</label>
-            <input type="text" name="categorie" id="categorie" required />
+            <label for="title">Titre</label>
+            <input type="text" name="title" id="title" required />
+            <label for="category">Catégorie</label>
+            <input type="text" name="category" id="category" required />
           </form>
         </section>
-        <section class="modale-footer">
+        <section class="modale_add_footer">
           <button>Valider</button>
         </section>
       </div>
@@ -111,8 +66,8 @@
           <ul>
             <li>projets</li>
             <li>contact</li>
-            <li><a href="login.html">login</a></li>
-            <li class="admin_mode hidden"><a href="#">logout</a></li>
+            <li id="login"><a href="login.html">login</a></li>
+            <li class="admin_mode hidden"><a id="logout" href="index.html">logout</a></li>
             <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
           </ul>
         </nav>
