@@ -9,18 +9,114 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet" />
     <meta name="description" content="" />
     <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/style_editor.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
+    <div id="modale_overlay" class="hidden">
+      <div id="modale_main" class="hidden">
+        <section id="modale_main-header">
+          <i class="fa-solid fa-xmark" style="color: #808080"></i>
+          <h3>Galerie photo</h3>
+        </section>
+        <section id="photos_projects">
+          <section class="card_image">
+            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
+            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+          </section>
+          <section class="card_image">
+            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
+            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+          </section>
+          <section class="card_image">
+            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
+            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+          </section>
+          <section class="card_image">
+            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
+            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+          </section>
+
+          <section class="card_image">
+            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
+            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+          </section>
+          <section class="card_image">
+            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
+            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+          </section>
+          <section class="card_image">
+            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
+            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+          </section>
+          <section class="card_image">
+            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
+            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+          </section>
+
+          <section class="card_image">
+            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
+            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+          </section>
+          <section class="card_image">
+            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
+            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+          </section>
+          <section class="card_image">
+            <img alt="Abajour Tahina" src="http://localhost:5678/images/abajour-tahina1651286843956.png" />
+            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+          </section>
+        </section>
+        <section class="modale-footer">
+          <button>Ajouter une photo</button>
+        </section>
+      </div>
+      <div id="modale_add" class="hidden">
+        <section id="modale_add-header">
+          <i class="fa-solid fa-xmark"></i>
+          <h3>Ajout photo</h3>
+          <form action="#" method="post">
+            <label id="add_photo">
+              <input type="file" id="image-upload" name="image-upload" accept="image/*" required />
+              <i class="fa-regular fa-image"></i>
+              <button>+ Ajout photo</button>
+              <p>jpg, png : 4mo max</p>
+            </label>
+            <label for="titre">Titre</label>
+            <input type="text" name="titre" id="titre" required />
+            <label for="categorie">Catégorie</label>
+            <input type="text" name="categorie" id="categorie" required />
+          </form>
+        </section>
+        <section class="modale-footer">
+          <button>Valider</button>
+        </section>
+      </div>
+    </div>
+
     <header>
-      <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-      <nav>
-        <ul>
-          <li>projets</li>
-          <li>contact</li>
-          <li><a href="login.html">login</a></li>
-          <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
-        </ul>
-      </nav>
+      <div class="admin_mode hidden banner">
+        <i class="fa-regular fa-pen-to-square"></i>
+        <p>Mode édition</p>
+      </div>
+      <div id="header">
+        <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+        <nav>
+          <ul>
+            <li>projets</li>
+            <li>contact</li>
+            <li><a href="login.html">login</a></li>
+            <li class="admin_mode hidden"><a href="#">logout</a></li>
+            <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
       <section id="introduction">
@@ -38,7 +134,14 @@
         </article>
       </section>
       <section id="portfolio">
-        <h2>Mes Projets</h2>
+        <div id="mes_projets">
+          <h2>Mes Projets</h2>
+          <a href="#" class="boutton_modifier admin_mode hidden">
+            <i class="fa-regular fa-pen-to-square"></i>
+            <p class="admin_mode">modifier</p>
+          </a>
+        </div>
+        <div class="admin_mode"></div>
         <div class="filters"></div>
         <div class="gallery"></div>
       </section>
@@ -65,5 +168,6 @@
       </nav>
     </footer>
     <script async defer src="./scriptApi.js"></script>
+    <script src="./scriptAdminMode.js"></script>
   </body>
 </html>

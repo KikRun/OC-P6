@@ -1,8 +1,7 @@
-const form = document.getElementById("form");
 const submit = document.getElementById("submit");
 
 submit.addEventListener("click", (event) => {
-  event.preventDefault;
+  event.preventDefault();
   const baliseEmail = document.getElementById("email");
   const email = baliseEmail.value;
   console.log(email);
@@ -11,19 +10,24 @@ submit.addEventListener("click", (event) => {
   const password = baliseMdp.value;
   console.log(password);
 
-  async function LoginCheck() {
+  async function loginCheck() {
     const loginFetch = await fetch("http://localhost:5678/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer Sophie",
       },
       body: JSON.stringify({ email, password }),
     });
-    const loginResponse = await loginFetch;
-    console.log(loginResponse.ok);
-    if (loginResponse.ok == true) {
+
+    const loginJson = await loginFetch.json();
+    console.log(loginJson);
+    console.log(loginJson.token);
+    if (loginFetch.ok == true) {
       console.log("Authentification réussi");
+
+      //sessionStorage.setItem('adminMode', 'true'); permet de garder de la data tant que l'onglet ou la fenêtre n'est pas fermé
+      sessionStorage.setItem("token", loginJson.token);
+
       //window.location.href correspond à l'URL de la page actuelle,
       //window.location.href = "index.html" permet d'être redigiré vers la page disgnée
       window.location.href = "index.html";
@@ -32,5 +36,5 @@ submit.addEventListener("click", (event) => {
     }
   }
 
-  LoginCheck();
+  loginCheck();
 });
