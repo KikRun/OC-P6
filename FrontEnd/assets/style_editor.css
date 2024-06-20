@@ -1,5 +1,9 @@
 /* Pour JS */
 
+* {
+  border: solid red 1px;
+}
+
 /* Modale */
 #modale_overlay {
   display: flex;
@@ -19,7 +23,6 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  justify-content: center;
   align-items: center;
   width: 800px;
   height: 800px;
@@ -30,11 +33,17 @@
 
 #modale_main-header i {
   display: flex;
-  justify-content: flex-end;
+  position: absolute;
   align-items: end;
   font-size: 30px;
-  margin-right: -290px;
-  margin-top: -100px;
+  top: 15px;
+  right: 15px;
+}
+
+.xmark_main,
+.xmark_add {
+  text-decoration: none;
+  color: black;
 }
 
 #modale_main-header h3 {
@@ -93,6 +102,8 @@
 
 .modale_footer button {
   display: flex;
+  position: absolute;
+  bottom: 70px;
   justify-content: center;
   align-items: center;
   font-family: "Syne";
@@ -121,18 +132,31 @@
   border-radius: 10px;
 }
 
-#modale_add-header i {
+#modale_add-header {
   display: flex;
-  justify-content: flex-end;
-  align-items: end;
-  font-size: 30px;
-  margin-right: -100px;
-  margin-top: -100px;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  justify-content: space-between;
+  width: 96%;
+  padding: 0;
+  margin: 0;
+  top: 15px;
 }
 
-#modale_add-header h3 {
+#modale_add-header i {
   display: flex;
+  align-items: center;
   justify-content: center;
+  font-size: 30px;
+  color: black;
+}
+
+#modale_add h3 {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  top: 50px;
   padding: 20px;
   font-size: 20px;
 }
@@ -140,11 +164,15 @@
 #modale_add form {
   text-align: left;
   display: flex;
+  position: absolute;
+  top: 160px;
   flex-direction: column;
   align-items: flex-start;
+  padding-bottom: 20px;
 }
 
-#modale_add input {
+#modale_add input,
+#modale_add select {
   height: 50px;
   width: 400px;
   font-size: 20px;
@@ -158,18 +186,21 @@
   padding-bottom: 20px;
 }
 
-#modale_add #image_upload {
-  display: ;
-}
-
 #add_photo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 170px;
+  max-height: 170px;
   width: 420px;
+  max-width: 420px;
   background-color: #e8f1f6;
+}
+
+#add_photo img {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 #add_photo i {
@@ -198,6 +229,8 @@
 
 .modale_add_footer {
   display: flex;
+  position: absolute;
+  bottom: 70px;
   justify-content: center;
   align-items: center;
   margin: 0;
