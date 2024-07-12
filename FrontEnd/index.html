@@ -22,35 +22,38 @@
     <div id="modale_overlay" class="hidden">
       <div id="modale_main" class="hidden">
         <section id="modale_main-header">
-          <i class="fa-solid fa-xmark" style="color: #808080"></i>
+          <a class="xmark_main" href="#"><i class="fa-solid fa-xmark"></i></a>
           <h3>Galerie photo</h3>
         </section>
-        <section id="photos_projects">
-          </section>
-        </section>
+        <section id="photos_projects"></section>
         <section class="modale_footer">
           <button>Ajouter une photo</button>
         </section>
       </div>
       <div id="modale_add" class="hidden">
         <section id="modale_add-header">
-          <i class="fa-solid fa-xmark"></i>
-          <h3>Ajout photo</h3>
-          <form action="#" method="post">
-            <label id="add_photo">
-              <input type="file" id="image_upload" name="image-upload" accept="image/*" required />
-              <i class="fa-regular fa-image"></i>
-              <button>+ Ajout photo</button>
-              <p>jpg, png : 4mo max</p>
-            </label>
-            <label for="title">Titre</label>
-            <input type="text" name="title" id="title" required />
-            <label for="category">Catégorie</label>
-            <input type="text" name="category" id="category" required />
-          </form>
+          <i class="back_arrow fa-solid fa-arrow-left"></i>
+          <a class="xmark_add" href="#"><i class="fa-solid fa-xmark"></i></a>
         </section>
+        <h3>Ajout photo</h3>
+
+        <form action="#" method="post" class="add_form">
+          <input class="hidden" type="file" id="image_upload" name="image-upload" accept="image/*" />
+          <label id="add_photo">
+            <img id="image_preview" class="hidden" alt="Aperçu de l'image" />
+            <i class="fa-regular fa-image"></i>
+            <button type="button">+ Ajout photo</button>
+            <p>jpg, png : 4mo max</p>
+          </label>
+          <label for="title">Titre</label>
+          <input type="text" name="title" id="title" required />
+          <label for="category">Catégorie</label>
+          <select id="category" name="category" required>
+            <option value="" disabled selected></option>
+          </select>
+        </form>
         <section class="modale_add_footer">
-          <button>Valider</button>
+          <button id="modale_add_button" disabled type="button">Valider</button>
         </section>
       </div>
     </div>
@@ -123,6 +126,6 @@
       </nav>
     </footer>
     <script async defer src="./scriptApi.js"></script>
-    <script src="./scriptAdminMode.js"></script>
+    <script async defer src="./scriptAdminMode.js"></script>
   </body>
 </html>

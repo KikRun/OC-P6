@@ -14,6 +14,8 @@ async function showWorks() {
   const gallery = document.querySelector(".gallery");
   console.log(worksList);
 
+  gallery.innerHTML = null;
+
   for (let work of worksList) {
     const figure = document.createElement("figure");
     const img = document.createElement("img");
