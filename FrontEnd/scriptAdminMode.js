@@ -23,8 +23,12 @@ async function createProject(dataUpload) {
 }
 
 function resetAddForm() {
-  const inputTitle = document.getElementById("title");
-  const inputCategory = document.getElementById("category");
+  const imagePreview = document.getElementById("image_preview");
+  const filledFormButton = document.getElementById("modale_add_button");
+
+  filledFormButton.disabled = true;
+
+  imagePreview.classList.add("hidden");
 
   const formAdd = document.querySelector(".add_form");
   formAdd.reset();
@@ -252,7 +256,24 @@ backArrow.addEventListener("click", () => {
 });
 
 // Gestion du boutton validé de la modale add
-const confirmButtonModale = document.querySelector(".modale_add_footer button");
+const confirmButtonModale = document.getElementById("modale_add_button");
+
+const imageUpload = document.getElementById("image_upload");
+const titleUpload = document.getElementById("title");
+const categoryUpload = document.getElementById("category");
+
+imageUpload.addEventListener("change", filledForm);
+titleUpload.addEventListener("input", filledForm);
+categoryUpload.addEventListener("change", filledForm);
+
+function filledForm() {
+  console.log("filledform");
+  const imageUpload = document.getElementById("image_upload");
+  const titleUpload = document.getElementById("title");
+  const categoryUpload = document.getElementById("category");
+
+  confirmButtonModale.disabled = !(imageUpload.files.length > 0 && titleUpload.value != "" && categoryUpload.value != "");
+}
 
 confirmButtonModale.addEventListener("click", () => {
   const activateModale = document.getElementById("modale_overlay");
@@ -277,6 +298,7 @@ confirmButtonModale.addEventListener("click", () => {
   const categoryUpload = document.getElementById("category");
   const categoryId = categoryUpload.value;
   console.log(categoryId);
+
   let idElement = 12;
   const userId = sessionStorage.getItem("userId");
 
