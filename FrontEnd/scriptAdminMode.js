@@ -7,6 +7,8 @@ function isConnected() {
   }
 }
 
+//Gestion de l'ajout d'un nouveau projet via l'API
+
 async function createProject(dataUpload) {
   const createProject = await fetch(`http://localhost:5678/api/works`, {
     method: "POST",
@@ -21,6 +23,8 @@ async function createProject(dataUpload) {
     resetAddForm();
   }
 }
+
+//Enlève les éléments du formulaires après ça validation
 
 function resetAddForm() {
   const imagePreview = document.getElementById("image_preview");
@@ -57,9 +61,14 @@ function handleAdminElements() {
     console.log("Sessions storage OK");
     const adminElements = document.querySelectorAll(".admin_mode");
     const loginElement = document.getElementById("login");
+    const filtersElement = document.querySelector(".filters");
+
+    filtersElement.classList.add("hidden");
+
     for (let element of adminElements) {
       element.classList.remove("hidden");
       loginElement.classList.add("hidden");
+      filtersElement.classList.add("hidden");
       console.log("En cours");
     }
   }
@@ -272,46 +281,69 @@ function filledForm() {
   const titleUpload = document.getElementById("title");
   const categoryUpload = document.getElementById("category");
 
-  confirmButtonModale.disabled = !(imageUpload.files.length > 0 && titleUpload.value != "" && categoryUpload.value != "");
+  confirmButtonModale.disabled = !(imageUpload.files.length > 0 || titleUpload.value != "" || categoryUpload.value != "");
 }
 
 confirmButtonModale.addEventListener("click", () => {
-  const activateModale = document.getElementById("modale_overlay");
-  const activateModaleAdd = document.getElementById("modale_add");
-
-  const uploadBoxIMark = document.querySelector("#add_photo > .fa-image");
-  const uploadBoxButton = document.querySelector("#add_photo > button");
-  const uploadBoxText = document.querySelector("#add_photo > p");
-
-  uploadBoxIMark.classList.remove("hidden");
-  uploadBoxButton.classList.remove("hidden");
-  uploadBoxText.classList.remove("hidden");
-
   const imageUpload = document.getElementById("image_upload");
-  const imageFile = imageUpload.files[0];
-  console.log(imageFile);
-
   const titleUpload = document.getElementById("title");
-  const title = titleUpload.value;
-  console.log(title);
-
   const categoryUpload = document.getElementById("category");
-  const categoryId = categoryUpload.value;
-  console.log(categoryId);
 
-  let idElement = 12;
-  const userId = sessionStorage.getItem("userId");
+  //Gestion des erreurs et alertes
+  if (imageUpload.files.length === 0) {
+    confirmButtonModale.disabled = true;
+    alert("Veuillez ajouter un image");
+  } else if (titleUpload.value === "") {
+    confirmButtonModale.disabled = true;
+    alert("Veuillez saisir un titre");
+  } else if (categoryUpload.value === "") {
+    confirmButtonModale.disabled = true;
+    alert("Veuillez sélectionner une catégorie");
 
-  const formData = new FormData();
-  formData.append("image", imageFile);
-  formData.append("title", title);
-  formData.append("category", categoryId);
+    //Préparation des informations du formulaire pour post via API
+  } else if (imageUpload.files.length > 0 && titleUpload.value != "" && categoryUpload.value != "") {
+    confirmButtonModale.disabled = false;
+    const imageUpload = document.getElementById("image_upload");
+    const titleUpload = document.getElementById("title");
+    const categoryUpload = document.getElementById("category");
 
-  createProject(formData);
+    const activateModale = document.getElementById("modale_overlay");
+    const activateModaleAdd = document.getElementById("modale_add");
 
-  activateModale.classList.add("hidden");
-  activateModaleAdd.classList.add("hidden");
-  idElement++;
+    const uploadBoxIMark = document.querySelector("#add_photo > .fa-image");
+    const uploadBoxButton = document.querySelector("#add_photo > button");
+    const uploadBoxText = document.querySelector("#add_photo > p");
 
-  console.log("Close");
+    uploadBoxIMark.classList.remove("hidden");
+    uploadBoxButton.classList.remove("hidden");
+    uploadBoxText.classList.remove("hidden");
+
+    // const imageUpload = document.getElementById("image_upload");
+    const imageFile = imageUpload.files[0];
+    console.log(imageFile);
+
+    // const titleUpload = document.getElementById("title");
+    const title = titleUpload.value;
+    console.log(title);
+
+    // const categoryUpload = document.getElementById("category");
+    const categoryId = categoryUpload.value;
+    console.log(categoryId);
+
+    let idElement = 12;
+    const userId = sessionStorage.getItem("userId");
+
+    const formData = new FormData();
+    formData.append("image", imageFile);
+    formData.append("title", title);
+    formData.append("category", categoryId);
+
+    createProject(formData);
+
+    activateModale.classList.add("hidden");
+    activateModaleAdd.classList.add("hidden");
+    idElement++;
+
+    console.log("Close");
+  }
 });
