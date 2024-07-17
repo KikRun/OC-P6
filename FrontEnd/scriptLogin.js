@@ -33,6 +33,7 @@ submit.addEventListener("click", (event) => {
       //window.location.href = "index.html" permet d'être redigiré vers la page disgnée
       window.location.href = "index.html";
     } else {
+      alert("Email et/ou mot de passe de l'utilisateur incorrectes");
       console.log("L'authenfication a échoué");
     }
   }
